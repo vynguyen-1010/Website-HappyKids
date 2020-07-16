@@ -1,0 +1,65 @@
+<%- include ('header') %>
+
+
+    <!-- content item -->
+    <div class="content-item">
+        <div class="container">
+            <div class="row one mt-4">
+                <div class="link float-left" style="width: 88%;">Home/I'm product</div>
+                <div class="button-slide float-right" style="width: 12%;">
+                    <span class=""><i class="fas fa-chevron-left"></i> Prev </span>|
+                    <span>Next <i class="fas fa-chevron-right"></i> </span>
+                </div>
+            </div>
+            <div class="row item mt-5">
+            <form action="" method="post">
+            <% data.forEach(function(motsp){ %>
+                <div style="visibility: hidden;" class="col-sm-6 wow animate__bounceInLeft" data-wow-duration="1s">
+                    <img style="border: 1px solid rgba(128, 128, 128, 0.096);" width="100%" src="<%= motsp.images[0] %>" alt="">
+                    <p class="mt-3"><%= motsp.des %></p>
+                </div>
+                <div style="transition-delay: 0.2s; visibility: hidden;" class="col-sm-6 wow animate__bounceInRight" data-wow-duration="1s">
+                    <div style="font-family: var(--font-title); font-size: var(--size-title);" class="title"><%= motsp.title %></div>
+                    <p class="des">SKU: 00002</p>
+                    <p class="cost">$<%= motsp.cost %></p>
+                    <div class="form-group">
+                      <label style="display: block;" for="color">Color</label>
+                      <input class="mr-2" style="width: 15px; height: 15px; background-color: lightcoral; border: none; border-radius: 50%;" type="button" value="">
+                      <input class="mr-2" style="width: 15px; height: 15px; background-color: lightblue; border: none; border-radius: 50%;" type="button" value="">
+                      <input style="width: 15px; height: 15px; background-color: violet; border: none; border-radius: 50%;" type="button" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="size">Size</label>
+                      <select class="form-control" name="size" id="">
+                        <option>3 - 5 months</option>
+                        <option> 12 - 24 months</option>
+                        <option> 2 - 3 years</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="quantity">Quantity</label>
+                      <input style="width: 25%;" type="number"
+                        class="form-control" value="1" name="quantity" id="" aria-describedby="helpId" placeholder="">
+                    </div>
+                    <button class="mt-5 pt-2 pb-2 addtocart" style="color: white; width: 100%; background-color: var(--color-button);" type="submit" class="btn btn-primary">Add to cart</button>
+                    <div class="product-info mt-5">
+                        <span style="text-transform: uppercase;">Product Info</span> <span class="float-right">+</span>
+                        <hr>
+                        <p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item. Buyers like to know what they’re getting before they purchase, so give them as much information as possible so they can buy with confidence and certainty.</p>
+                    </div>
+                    <div class="return mt-5">
+                        <span style="text-transform: uppercase;">Return Policy</span>
+                        <span class="float-right">--</span>
+                        <hr>
+                        <p>I’m a return and refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p>
+                    </div>
+                </div>
+                <% }) %>
+            </form>
+            </div>
+        
+        </div>
+    </div>
+
+    <!-- end content item -->
+<%- include ('footer') %>

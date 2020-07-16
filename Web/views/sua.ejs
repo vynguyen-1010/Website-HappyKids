@@ -1,0 +1,34 @@
+<%- include ('header') %>
+    <div class="container">      
+        <div class="jumbotron text-center">
+            <h1 class="display-3">Sửa dữ liệu</h1>
+            <p class="lead">từ csdl đổ vào</p>
+            <hr class="my-2">
+        </div>
+        <% data.forEach(function(mot){ %>
+        <form action="/sua.<%= mot._id %>" method="post">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Tiêu đề sản phẩm" value="<%= mot.title %>">
+        </div>
+        <div class="form-group">
+          <label for="des">Description</label>
+          <input type="text" class="form-control" name="des" id="des" aria-describedby="helpId" placeholder="Chi tiết về sản phẩm" value="<%= mot.des %>">
+        </div>
+        <div class="form-group">
+          <label for="cost">Cost</label>
+          <input type="text" class="form-control" name="cost" id="cost" aria-describedby="helpId" placeholder="Giá sản phẩm" value="<%= mot.cost %>">
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="text" class="form-control" name="image" id="" aria-describedby="helpId" placeholder="Upload ảnh" value="<%= mot.images[0] %>">
+        </div>
+        <!-- <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" class="form-control-file" name="image" id="" placeholder="" aria-describedby="fileHelpId">
+        </div> -->
+        <button style="width: 25%;" type="submit" class="btn btn-secondary pt-2 pb-2">Submit</button>
+    </form> 
+    <% }) %> 
+    </div>
+<%- include ('footer') %>

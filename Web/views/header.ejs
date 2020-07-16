@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>    
+    <script src="./vendor/jquery-3.4.1.js"></script>
+    <script src="./vendor/popper.min.js"></script>
+    <script src="./vendor/wow.js"></script>
+    <script src="./vendor/dropzone.js"></script>
+    <script src="./vendor/isotope.pkgd.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./vendor/all.css">
+    <link rel="stylesheet" href="./vendor/bootstrap.css">
+    <link rel="stylesheet" href="./vendor/fontawesome.css">
+    <link rel="stylesheet" href="./vendor/animate.min.css">
+    <link rel="stylesheet" href="./vendor/dropzone.css">
+</head>
+<body>
+    
+    <!-- header -->
+    
+    
+    <header>
+        <!-- top-header -->
+        <div class="top-header">
+            <span>Free Shipping Over $50</span> <!-- noi dung can thay doi ne -->
+            <span>Get 10% Off - Use Coupon Code HAPPYKIDS10</span>
+        </div>
+        <!-- end top-header -->
+        <!-- logo -->
+        <a href="/" class="logo wow animate__lightSpeedInRight" data-wow-duration="2s">
+            <img src="./images/logo.png" alt="">
+        </a>
+        <!-- end logo -->
+        <!-- admin button -->
+        <a style="position: fixed; top: 60px; right: 50px;" href="/xem" class="btn btn-danger">Xem</a>
+
+        <!-- menu -->
+        <div class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2 icon-user">
+                        <a href="/login">
+                            <i class="fas fa-user-circle mr-2"></i> 
+                            <span>Log In</span>
+                        </a>
+                    </div>
+                    <!-- list menu -->
+                    <div class="col-sm-8 list-menu">
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/shop-collect">Shop Collection</a>
+                            </li>
+                            <li>
+                                <a href="/our-story">Our Story</a>
+                            </li>
+                            <li>
+                                <a href="/contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end list menu -->
+                    <!-- icon cart -->
+                    <div class="col-sm-2 icon-cart">
+                        <a href="">
+                            <i class="fab fa-opencart"></i> 
+                            <span>0</span>
+                        </a>
+                    </div>
+                    <!-- end icon cart -->
+                </div>
+            </div>
+        </div>
+        <!-- end menu -->
+    </header>
+    <hr class="mb-0">
+    <!-- cart -->
+
+
+    <div class="modal-box-cart">
+        <div class="cart text-center">
+            <div class="title mb-3">
+                <img src="./images/arrow.png" alt="">
+                <span>My Cart</span>
+            </div>
+            <!-- <p>Cart is empty</p> -->
+            <% data.forEach(function(motsp){ %>
+            <div style="display: flex;" class="item text-left">
+                <img style="width: 40%;" src="<%= motsp.images[0] %>" alt="">
+                <div style="width: 50%;" class="description mt-4">
+                    <div><%= motsp.title %></div>
+                    <div style="font-weight: bold;">$<%= motsp.cost %></div>
+                    <div class="form-group mt-2">
+                      <input style="width: 30%;" type="number"
+                        class="form-control" name="" id="" aria-describedby="helpId" placeholder="" value="<%= motsp.quantity %>">
+                    </div>
+                </div>
+
+                <a style="width: 10%; height: fit-content;" href="" class="btn btn-outline-secondary">X</a>
+            </div>
+            
+            <div class="block-bottom ml-3 mr-3 text-left">
+                <p>Subtotal</p>
+                <p class="cost">$00.00</p>
+                <a href="/my-cart.<%= motsp._id %>" class="btn btn-secondary">Check it out</a>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    
+    <!-- end cart -->
+
+    
+    <!-- end header -->

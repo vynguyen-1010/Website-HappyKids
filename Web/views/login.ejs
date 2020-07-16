@@ -1,0 +1,28 @@
+<%- include ('header') %>
+
+<!-- login -->
+    <div class="login wow animate__bounceInDown" data-wow-duration="2s" style="visibility: hidden;">
+        <!-- <button class="hide">
+            <span>+</span>
+        </button> -->
+        <a style="color: black;" href="/" class="hide">
+        <span>+</span></a>  
+        <h2>Log In</h2>
+        <span>New to this site? <a class="link-sign-up" href="/sign-up">Sign Up</a></span>
+        <a href="" class="btn btn-primary google-login">
+        <img src="./images/google.png" alt="">
+        <span>Login with Google</span></a>
+        <a href="" class="btn btn-info facebook-login">
+        <img src="./images/facebook.png" alt="">
+        <span>Login with Facebook</span></a>
+        <hr>
+        <span style="position: absolute;
+        top: 401px;
+        background-color: white;
+        width: 50px;
+        left: 50%;
+        margin-left: -25px;">or</span>
+        <a href="" class="btn btn-outline-secondary">Login with email</a>        
+    </div>
+    <!-- end login -->
+    <%- include ('footer') %>
